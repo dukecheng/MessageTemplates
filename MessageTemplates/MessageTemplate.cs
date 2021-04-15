@@ -32,7 +32,7 @@ namespace MessageTemplates
             _text = text;
             _tokens = tokens.ToArray();
 
-            var propertyTokens = _tokens.OfType<PropertyToken>().ToArray();
+            var propertyTokens = _tokens.OfType<PropertyToken>().Distinct().ToArray();
             if (propertyTokens.Length != 0)
             {
                 var allPositional = true;
